@@ -3,10 +3,11 @@
     <Header />
 
     <div class="container">
-      <Subcategory />
+      <Subcategory/>
       <Carousel />
     </div>
 
+  <Footer />
   </div>
 </template>
 
@@ -14,13 +15,15 @@
 import Header from './components/header.vue'
 import Subcategory from './components/subcategory.vue'
 import Carousel from './components/carousel.vue'
+import Footer from './components/footer.vue'
 
 export default {
   name: "App",
   components: {
     Header,
     Carousel,
-    Subcategory
+    Subcategory,
+    Footer
   }
 }
 </script>

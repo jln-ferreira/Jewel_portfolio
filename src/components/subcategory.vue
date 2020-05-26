@@ -1,13 +1,16 @@
 <template>
-  <div class="row">
-      <div v-for="category in categories" v-bind:key="category.id" class="div-photo col-sm-4">
-        <img :src="category.image" :title="category.name" class="img-thumbnail image">
-        <div class="middle">
-            <div class="text">{{ category.name }}</div>
+  <div>
+    <div class="row">
+        <div v-for="category in categories" v-bind:key="category.id" @click="subSelect(category.id)" class="div-photo col-sm-4">
+          <img :src="category.image" :title="category.name" class="img-thumbnail image">
+          <div class="middle">
+              <div class="text">{{ category.name }}</div>
+          </div>
         </div>
-      </div>
-  </div>
+    </div>
 
+    <hr>
+  </div>
 </template>
 
 <script>
@@ -35,6 +38,9 @@ export default {
         }
     },
     methods:{
+      subSelect(id){
+        return console.log(id)
+      }
         
     }
 }
@@ -49,6 +55,7 @@ export default {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
 }
 
 .image:hover {
