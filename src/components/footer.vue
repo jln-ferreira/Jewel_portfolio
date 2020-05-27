@@ -19,34 +19,19 @@
                 </div>
             </div>
 
-            <!-- ---- [ Contact info - Social Media ] ---- -->
-            <div class="row">
-                <!-- [Information] -->
-                <div class="col-sm-6">
+            <!-- ---- [ Social Media ] ---- -->
+            <div class="row social-Media"> 
+                <hr>
 
-                </div>
-
-                <div class="col-sm-2"></div>
-
-                <div class="col-sm-4">
-                    <hr>
-                    <!-- [social media] -->
-                    <div class="social-buttons">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-youtube"></i></a>
-                    </div>
-                    <!-- [Email] -->
-                    <p class="test">jewel.jewel@jewel.je</p>
-
-                </div>
+                <!-- [social media] -->
+                <div class="social-buttons">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>        
             </div>
 
-
         </div>
-
-
-
     </div>
 
     
@@ -65,14 +50,24 @@ export default {
     font-family: Trump Gothic East;
     src: url(../assets/font/trump_gothic_east_bold.ttf);
     }
+    @font-face {
+    font-family: MaisonNeue;
+    src: url(../assets/font/MaisonNeue-Bold.ttf);
+    }
     
     .footer{
         background-color: black;
     }
+
+    /* ------[Localizations]----- */
     .row-location{
         margin-top: 20px;
-        margin-bottom: 70px;
+        margin-bottom: 25px;
     }
+    .social-Media{
+        margin-bottom: 35px;
+    }
+
     .place-XX{
         color: white;
         font-size: 96px;
@@ -84,18 +79,17 @@ export default {
         color: #ef0d33;
         transition-duration: 0.5s;
     }
-
     .place-Description{
         color: #888888;
         font-size: 18px;
         font-weight: 100;
         font-family: 'Maison Neue';
     }
-
     .place-XX:hover ~ .place-Description{
         color: rgb(190, 190, 190);
         transition-duration: 0.5s;
     }
+    /* [end localization] */
 
     /* ---------[Media Icons]-------*/
 
@@ -112,28 +106,14 @@ export default {
         margin: 0 8px;
     }
 
-
-    .social-buttons a i{
-        transition: 0.3s ease-in;
-    }
-
     .social-buttons a:hover .fa-facebook{
-        background: linear-gradient(45deg,#7571b3,#2c1ace);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transform: scale(1.7);
+        color: #4267B2;
     }
     .social-buttons a:hover .fa-instagram{
-        background: linear-gradient(45deg,#9c51ff,#d200da);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transform: scale(1.7);
+        color: #E1306C;
     }
     .social-buttons a:hover .fa-youtube{
-        background: linear-gradient(45deg,#ff9393,#ff2542);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        transform: scale(1.7);
+        color: #FF0000;
     }
     
 
