@@ -6,7 +6,8 @@
       <Subcategory/>
       <Carousel />
     </div>
-
+    
+  <Contact />
   <Footer />
   </div>
 </template>
@@ -15,6 +16,7 @@
 import Header from './components/header.vue'
 import Subcategory from './components/subcategory.vue'
 import Carousel from './components/carousel.vue'
+import Contact from './components/contact.vue'
 import Footer from './components/footer.vue'
 
 export default {
@@ -23,6 +25,7 @@ export default {
     Header,
     Carousel,
     Subcategory,
+    Contact,
     Footer
   }
 }
