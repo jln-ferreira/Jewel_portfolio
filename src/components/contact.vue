@@ -20,11 +20,76 @@
                         <div class="form-group row">
                             <label class="col-xs-3 label-form" for="country">Country:</label>
                             <div class="col-xs-8">
-                                <select v-model='country' class="form-control col-lg-2" id="country">
-                                    <option selected>Choose...</option>
-                                    <option value="1">Canada</option>
-                                    <option value="2">Brazil</option>
-                                    <option value="3">United States</option>
+                                <select v-model='country' :class="['form-control', 'col-lg-2', isCoutryValid()]" id="country">
+                                    <option disabled value="">Please select one</option>
+                                    <option value="Albania">Albania</option>                               
+                                    <option value="Argentina">Argentina</option>
+                                    <option value="Armenia">Armenia</option>
+                                    <option value="Australia">Australia</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="Bahamas">Bahamas</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Belgium">Belgium</option>
+                                    <option value="Bermuda">Bermuda</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Bulgaria">Bulgaria</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="China">China</option>
+                                    <option value="Colombia">Colombia</option>
+                                    <option value="Costa Rica">Costa Rica</option>
+                                    <option value="Croatia">Croatia</option>
+                                    <option value="Cuba">Cuba</option>
+                                    <option value="Czech Republic">Czech Republic</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="Dominican Republic">Dominican Republic</option>
+                                    <option value="East Timor">East Timor</option>
+                                    <option value="Ecuador">Ecuador</option>
+                                    <option value="El Salvador">El Salvador</option>
+                                    <option value="France">France</option>
+                                    <option value="French Guiana">French Guiana</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Great Britain">Great Britain</option>
+                                    <option value="Greece">Greece</option>
+                                    <option value="Guatemala">Guatemala</option>                                    
+                                    <option value="Hawaii">Hawaii</option>                                    
+                                    <option value="Hong Kong">Hong Kong</option>
+                                    <option value="Hungary">Hungary</option>                                    
+                                    <option value="India">India</option>
+                                    <option value="Iran">Iran</option>                                  
+                                    <option value="Ireland">Ireland</option>                                   
+                                    <option value="Italy">Italy</option>                                   
+                                    <option value="Japan">Japan</option>                                                                       
+                                    <option value="Korea South">Korea South</option>                                    
+                                    <option value="Mexico">Mexico</option>                                    
+                                    <option value="Morocco">Morocco</option> 
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="Nicaragua">Nicaragua</option>                                    
+                                    <option value="Panama">Panama</option>
+                                    <option value="Paraguay">Paraguay</option>
+                                    <option value="Peru">Peru</option>                        
+                                    <option value="Portugal">Portugal</option>
+                                    <option value="Puerto Rico">Puerto Rico</option>                                   
+                                    <option value="Russia">Russia</option>                                   
+                                    <option value="Saudi Arabia">Saudi Arabia</option>                                    
+                                    <option value="Singapore">Singapore</option>
+                                    <option value="Slovakia">Slovakia</option>
+                                    <option value="Slovenia">Slovenia</option>
+                                    <option value="South Africa">South Africa</option>
+                                    <option value="Spain">Spain</option>
+                                    <option value="Swaziland">Swaziland</option>
+                                    <option value="Sweden">Sweden</option>
+                                    <option value="Switzerland">Switzerland</option>
+                                    <option value="Syria">Syria</option>
+                                    <option value="Turkey">Turkey</option>
+                                    <option value="United Kingdom">United Kingdom</option>
+                                    <option value="Ukraine">Ukraine</option>
+                                    <option value="United Arab Erimates">United Arab Emirates</option>
+                                    <option value="United States of America">United States of America</option>
+                                    <option value="Uraguay">Uruguay</option>
+                                    <option value="Vatican City State">Vatican City State</option>
+                                    <option value="Venezuela">Venezuela</option>
                                 </select>
                             </div>
                         </div>
@@ -35,11 +100,11 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <button class="button btn-form"><span>Send</span></button>
+                            <button :class="['button', 'btn-form', AllowSend()]"><span>Send</span></button>
                         </div>
                     </form>
                 </div>
-                <img src="images/contact/model_jewel.jpg" class="col-sm-6 contact-image">
+                <div class="col-sm-6 contact-image"></div>
             </div>
         </div>
     </div>
@@ -64,6 +129,12 @@ export default {
         },
         isNameValid() {
             return (this.name == "")? "" : (this.regex_name.test(this.name)) ? 'has-success' : 'has-error';
+        },
+        isCoutryValid() {
+            return (this.country != "")? 'has-success' : 'has-error';
+        },
+        AllowSend() {
+            return (this.isEmailValid() == 'has-success' && this.isNameValid() == 'has-success' && this.isCoutryValid() == 'has-success') ? "" : 'block-send';
         }
     }
 }
@@ -104,8 +175,13 @@ export default {
 .contact-image{ 
     border-radius: 0px 10px 10px 0px;
     padding: 0;
+    background-image: url('https://www.itl.cat/pngfile/big/88-887748_57-hd-jewelry-wallpapers-background-images-pile-of.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
     height: 417px;
 }
+
 
 /* [button form] */
 .btn-form {
@@ -117,11 +193,9 @@ export default {
     color: #FFFFFF;
     font-size: 20px;
     transition: all 0.5s;
-    cursor: pointer;
 }
 
 .button span {
-    cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
@@ -144,6 +218,13 @@ export default {
   opacity: 1;
   right: 0;
 }
+
+.block-send{
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    
+}
 /* END BUTTON FORM */
 
 /* [VALIDATION FORM REGEX] */
@@ -155,6 +236,13 @@ export default {
 .has-success{
     border: none;
 }
+/* ======----======= */
 
+
+@media screen and (max-width: 990px) {
+  .contact-image {
+    height: 439px;
+  }
+}
 
 </style>

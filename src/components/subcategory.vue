@@ -21,19 +21,18 @@ export default {
                 {   //chains
                     id:1,
                     name:'Chains',
-                    image: 'subcategory/chains.jpg'
+                    image: 'images/subcategory/chains.jpg'
                 },
                 {   //Earrings
                     id:2,
                     name:'Earrings',
-                    image: 'subcategory/earrings.jpg'
+                    image: 'images/subcategory/earrings.jpg'
                 },
                 {   //Necklaces
                     id:3,
                     name:'Necklaces',
-                    image: 'subcategory/necklaces.jpg'
+                    image: 'images/subcategory/necklaces.jpg'
                 }
-
             ]
         }
     },
