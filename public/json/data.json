@@ -1,0 +1,103 @@
+
+{ 
+    "products":[
+        {   
+            "id":1,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/chains.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":2,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/necklaces.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":3,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/earrings.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":4,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/necklaces.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":5,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/earrings.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":6,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/earrings.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":7,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/necklaces.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":8,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/necklaces.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        },
+        {   
+            "id":9,
+            "category_id": 3,
+            "name":"Escapulário",
+            "metal":"Yellow Gold",
+            "wheight": 1.7,
+            "image": "images/subcategory/chains.jpg",
+            "description": "Lorem ipsum dolor sit amet, doctus animal platonem has at. At prodesset philosophia eum. Qui in eirmod atomorum vulputate, iriure molestie cu sea. Ex mel graeci nostrud discere. Sale denique pertinax usu ad, ea primis labore intellegat vis. "
+        }
+    ],
+    "categories":[
+        {   
+            "id":1,
+            "name":"Chains",
+            "image": "images/subcategory/chains.jpg"
+        },
+        {   
+            "id":2,
+            "name":"Earrings",
+            "image": "images/subcategory/earrings.jpg"
+        },
+        {   
+            "id":3,
+            "name":"Necklaces",
+            "image": "images/subcategory/necklaces.jpg"
+        }
+    ] 
+}
