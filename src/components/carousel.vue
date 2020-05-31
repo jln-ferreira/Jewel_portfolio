@@ -1,13 +1,13 @@
 <template>
   <div class="container">
     <div class="row">
-        <div v-for="product in ProductsDB.products" v-bind:key="product.id" @click="ProdSelected(product.id)" class="div-photo-carr col-sm-2">
+        <div v-for="(product, index) in ProductsDB.products" v-bind:key="product.id" @click="IndexSelected(index)" class="div-photo-carr col-sm-2">
           <img :src="product.image" :title="product.name" class="img-thumbnail image-carr" data-toggle="modal" data-target="#myModal">
         </div>
     </div>
 
   <!-- MODAL new Component -->
-  <Modal />
+  <Modal :ProductsDB="ProductsDB" :indexSelected="indexSelected" />
   <!-- --------====-------- -->
 
   </div>
@@ -23,17 +23,16 @@ export default {
   },
     data(){
         return{
-           productSelected: "" 
+          indexSelected: 0
         }
       },
       props: {
         ProductsDB: Object
       },
       methods:{
-        ProdSelected(id){
-          this.productSelected = id
-          return console.log(this.productSelected)
-        }   
+        IndexSelected(index){
+          return this.indexSelected = index
+        }
     }
 }
 </script>
