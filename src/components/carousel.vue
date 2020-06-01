@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-        <div v-for="(product, index) in ProductsDB.products" v-bind:key="product.id" @click="IndexSelected(index)" class="div-photo-carr col-sm-2">
+        <div v-for="(product, index) in ProductsDB.products" v-bind:key="product.id" @click="IndexSelected(index)" class="div-photo-carr col-sm-2 col-xs-4">
           <img :src="product.image" :title="product.name" class="img-thumbnail image-carr" data-toggle="modal" data-target="#myModal">
         </div>
     </div>
