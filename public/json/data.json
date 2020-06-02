@@ -4,7 +4,7 @@
         {   
             "id":1,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 1",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -14,7 +14,7 @@
         {   
             "id":2,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 2",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -24,7 +24,7 @@
         {   
             "id":3,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 3",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -34,7 +34,7 @@
         {   
             "id":4,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 4",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -44,7 +44,7 @@
         {   
             "id":5,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 5",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -54,7 +54,7 @@
         {   
             "id":6,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 6",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -64,7 +64,7 @@
         {   
             "id":7,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 7",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -74,7 +74,7 @@
         {   
             "id":8,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 8",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
@@ -84,7 +84,7 @@
         {   
             "id":9,
             "category_id": 3,
-            "name":"Escapulário",
+            "name":"Escapulário 9",
             "metal":"Yellow Gold",
             "wheight": 1.7,
             "size": "45 cm",
