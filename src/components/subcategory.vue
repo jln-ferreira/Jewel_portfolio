@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-        <div v-for="category in ProductsDB.categories" v-bind:key="category.id" @click="subSelect(category.id)" class="div-photo-subcat col-xs-4">
+        <div v-for="category in ProductsDB.categories" v-bind:key="category.id" @click="$emit('Category_Selected', category.id)" class="div-photo-subcat col-xs-4">
           <img :src="category.image" :title="category.name" class="img-thumbnail image-subcat">
           <div class="middle-subcat">
               <div class="text">{{ category.name }}</div>
@@ -16,17 +16,14 @@
 export default {
     data(){
         return{
-
+          
         }
     },
     props: {
       ProductsDB: Object
     },
     methods:{
-      subSelect(id){
-        return console.log(id)
-      }
-        
+         
     }
 }
 </script>

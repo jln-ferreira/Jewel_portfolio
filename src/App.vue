@@ -2,8 +2,8 @@
   <div id="app">
     
     <Header />
-    <Subcategory :ProductsDB="myJson"/>
-    <Carousel :ProductsDB="myJson"/> 
+    <Subcategory :ProductsDB="myJson" @Category_Selected="getCategory_Selected"/>
+    <Carousel :category_clicked="this.category_clicked_json"/> 
     <Contact />
     <Footer />
 
@@ -32,8 +32,21 @@ export default {
   },
   data(){
     return{
-      myJson: json
+      myJson: json,
+      category_clicked_json: json.products
     }
+  },
+  methods:{
+    // Filter when click subcategory
+    getCategory_Selected(value){
+      if(value == -1) this.category_clicked_json = this.json.products 
+      else{
+        this.category_clicked_json = []
+        this.myJson.products.forEach(element => {
+          if(element.category_id == value) this.category_clicked_json.push(element) 
+        });
+      }
+    }//end filter category
   }
 }
 </script>

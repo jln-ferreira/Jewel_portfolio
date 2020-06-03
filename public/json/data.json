@@ -3,7 +3,7 @@
     "products":[
         {   
             "id":1,
-            "category_id": 3,
+            "category_id": 1,
             "name":"Escapulário 1",
             "metal":"Yellow Gold",
             "wheight": 1.7,
@@ -23,7 +23,7 @@
         },
         {   
             "id":3,
-            "category_id": 3,
+            "category_id": 2,
             "name":"Escapulário 3",
             "metal":"Yellow Gold",
             "wheight": 1.7,
@@ -43,7 +43,7 @@
         },
         {   
             "id":5,
-            "category_id": 3,
+            "category_id": 2,
             "name":"Escapulário 5",
             "metal":"Yellow Gold",
             "wheight": 1.7,
@@ -53,7 +53,7 @@
         },
         {   
             "id":6,
-            "category_id": 3,
+            "category_id": 2,
             "name":"Escapulário 6",
             "metal":"Yellow Gold",
             "wheight": 1.7,
@@ -83,7 +83,7 @@
         },
         {   
             "id":9,
-            "category_id": 3,
+            "category_id": 1,
             "name":"Escapulário 9",
             "metal":"Yellow Gold",
             "wheight": 1.7,

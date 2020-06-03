@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-        <div v-for="(product, index) in ProductsDB.products" v-bind:key="product.id" @click="IndexSelected(index)" class="div-photo-carr col-sm-2 col-xs-4">
+        <div v-for="product in category_clicked" v-bind:key="product.id" @click="IndexSelected(product.id)" class="div-photo-carr col-sm-2 col-xs-4">
           <img :src="product.image" :title="product.name" class="img-thumbnail image-carr" data-toggle="modal" data-target="#myModal">
         </div>
     </div>
@@ -26,7 +26,7 @@
               <i class="fa fa-arrow-left carousel-arrow arrow-left" @click="turnLeft()"></i>
             </div>
              <div class="col-xs-10">
-              <img :src="ProductsDB.products[indexSelected].image" :title="ProductsDB.products[indexSelected].name" class="img-thumbnail image-modal">
+              <img :src="category_clicked[indexSelected].image" :title="category_clicked[indexSelected].name" class="img-thumbnail image-modal">
             </div>
              <div class="col-xs-1">
               <i class="fa fa-arrow-right carousel-arrow arrow-right" @click="turnRight()"></i>
@@ -38,14 +38,14 @@
           <!-- [Description] -->
           <div class="description-jewel">
             <div>
-              <h2><b>{{ ProductsDB.products[indexSelected].name }}</b></h2>
-              <p class="description">{{ ProductsDB.products[indexSelected].description }}</p>
+              <h2><b>{{ category_clicked[indexSelected].name }}</b></h2>
+              <p class="description">{{ category_clicked[indexSelected].description }}</p>
             </div>
             <!-- [technical list] -->
             <ul>
-              <li class="TL-unit"><b>Metal: </b>{{ ProductsDB.products[indexSelected].metal }}</li>
-              <li class="TL-unit"><b>Wheight: </b>{{ ProductsDB.products[indexSelected].wheight }}</li>
-              <li class="TL-unit"><b>Size: </b>{{ ProductsDB.products[indexSelected].size }}</li>
+              <li class="TL-unit"><b>Metal: </b>{{ category_clicked[indexSelected].metal }}</li>
+              <li class="TL-unit"><b>Wheight: </b>{{ category_clicked[indexSelected].wheight }}</li>
+              <li class="TL-unit"><b>Size: </b>{{ category_clicked[indexSelected].size }}</li>
             </ul>
           </div>
           
@@ -66,19 +66,20 @@
 
 <script>
 export default {
-
   data(){
     return{
       indexSelected: 0,
-      lengthProduct: this.ProductsDB.products.length -1
+      lengthProduct: this.category_clicked.length -1
+
     }
   },
   props: {
-    ProductsDB: Object
+    category_clicked: Array
+      
   },
   methods:{
-    IndexSelected(index){
-      return this.indexSelected = index
+    IndexSelected(id){
+      return this.indexSelected = id
     },
     turnLeft(){
       return (this.indexSelected == 0) ? this.indexSelected = this.lengthProduct : this.indexSelected -= 1
@@ -126,7 +127,7 @@ export default {
     vertical-align: middle;
     height: 378px;
     padding: 0px;
-    -webkit-writing-mode: vertical-lr;
+    writing-mode: vertical-lr;
     font-size: xx-large;
     transform: scale(1);
     animation: pulse 2s infinite;
