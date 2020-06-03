@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row">
-        <div v-for="product in category_clicked" v-bind:key="product.id" @click="IndexSelected(product.id)" class="div-photo-carr col-sm-2 col-xs-4">
+        <div v-for="(product, index) in category_clicked" v-bind:key="product.id" @click="IndexSelected(index)" class="div-photo-carr col-sm-2 col-xs-4">
           <img :src="product.image" :title="product.name" class="img-thumbnail image-carr" data-toggle="modal" data-target="#myModal">
         </div>
     </div>
@@ -68,9 +68,7 @@
 export default {
   data(){
     return{
-      indexSelected: 0,
-      lengthProduct: this.category_clicked.length -1
-
+      indexSelected: 0 //product i selected to open modal 
     }
   },
   props: {
@@ -78,14 +76,15 @@ export default {
       
   },
   methods:{
-    IndexSelected(id){
-      return this.indexSelected = id
+    IndexSelected(index){ //product i selected to open modal 
+      return this.indexSelected = index
     },
     turnLeft(){
-      return (this.indexSelected == 0) ? this.indexSelected = this.lengthProduct : this.indexSelected -= 1
+      if(this.indexSelected == 0) return this.indexSelected = this.category_clicked.length -1
+      else return this.indexSelected -= 1    
     },
     turnRight(){
-      return (this.indexSelected == this.lengthProduct) ? this.indexSelected = 0 : this.indexSelected += 1
+      return (this.indexSelected == this.category_clicked.length -1) ? this.indexSelected = 0 : this.indexSelected += 1
     }
   }
 }
