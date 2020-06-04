@@ -3,6 +3,7 @@
     
     <Header />
     <TopMind />
+    <AboutCompany />
     <Carousel :ProductsDB="myJson"/> 
     <Contact />
     <Footer />
@@ -14,6 +15,7 @@
 // import components
 import Header from './components/header.vue'
 import TopMind from './components/topMind.vue'
+import AboutCompany from './components/aboutCompany.vue'
 import Carousel from './components/carousel.vue'
 import Contact from './components/contact.vue'
 import Footer from './components/footer.vue'
@@ -26,6 +28,7 @@ export default {
   components: {
     Header,
     TopMind,
+    AboutCompany,
     Carousel,
     Contact,
     Footer
