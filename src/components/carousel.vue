@@ -2,23 +2,48 @@
   <div class="container container-products">
     <h1 class="title-products">Products by Categories</h1>
     <!------------------------- CATEGORY LIST ------------------------------>
+    <!----------------------------- FILTER --------------------------------->
     <div class="row">
-        <div v-for="category in ProductsDB.categories" v-bind:key="category.id" @click="Category_Selected(category.id)" class="div-photo-subcat col-xs-3">
-          <img :src="category.image" :title="category.name" class="img-thumbnail image-Show">
-          <div class="middle-subcat">
-              <div class="text">{{ category.name }}</div>
+      <!-- all products -->
+      <div class="col-xs-2 border-division">
+        <div class="div-photo-subcat">
+          <img src="images/products/modern-crucifix.jpg" class="img-thumbnail image-Show" @click="Category_Selected(-1)">
+          <div>
+              <div class="category-name">All Products</div>
           </div>
         </div>
-    </div>
-    <hr>
-
-    <!------------------------- PRODUCTS LIST ----------------------------->
-    <div class="row">
-        <div v-for="(product, index) in category_clicked" v-bind:key="product.id" @click="IndexSelected(index)" class="div-photo-carr col-sm-2 col-xs-4">
-          <img :src="product.image" :title="product.name" class="img-thumbnail image-Show" data-toggle="modal" data-target="#myModal">
+      </div>
+      <!-- all categories -->
+      <div class="col-xs-7 border-division">
+        <div v-for="category in ProductsDB.categories" v-bind:key="category.id" @click="Category_Selected(category.id)" class="div-photo-subcat col-xs-4">
+          <img :src="category.image" :title="category.name" class="img-thumbnail image-Show">
+          <div>
+              <div class="category-name">{{ category.name }}</div>
+          </div>
         </div>
-    </div>
+      </div>
+      <!-- sort -->
+      <div class="col-xs-2 border-division">
+        <p>Sort Products</p>
+        <div v-for="category in ProductsDB.categories" v-bind:key="category.id" @click="Category_Selected(category.id)" class="div-photo-subcat col-xs-4">
+          <img :src="category.image" :title="category.name" class="img-thumbnail image-Show">
+          <div>
+              <div class="category-name">{{ category.name }}</div>
+          </div>
+        </div>
+      </div>
 
+    </div> <!-- end row -->
+
+    <hr>
+      <!------------------------- PRODUCTS LIST ----------------------------->
+      <div class="row"> 
+          <h3 v-text="Subcategory_products" class="title-products"></h3>
+          
+          <div v-for="(product, index) in category_clicked" v-bind:key="product.id" @click="IndexSelected(index)" class="div-photo-carr col-sm-2 col-xs-4">
+            <img :src="product.image" :title="product.name" class="img-thumbnail image-Show" data-toggle="modal" data-target="#myModal">
+          </div>
+      </div>
   <!------------------------- MODAL new Component ------------------------>
   <!-- The Modal -->
   <div class="modal fade" id="myModal">
@@ -52,16 +77,19 @@
           <div class="description-jewel">
             <div>
               <h2><b>{{ category_clicked[indexSelected].name }}</b></h2>
-              <p class="description">{{ category_clicked[indexSelected].description }}</p>
+              <p class="description" v-html='category_clicked[indexSelected].description'></p>
             </div>
             <!-- [technical list] -->
             <ul>
-              <li class="TL-unit"><b>Metal: </b>{{ category_clicked[indexSelected].metal }}</li>
-              <li class="TL-unit"><b>Wheight: </b>{{ category_clicked[indexSelected].wheight }}</li>
-              <li class="TL-unit"><b>Size: </b>{{ category_clicked[indexSelected].size }}</li>
+              <li class="TL-unit"><b>Metal: </b>{{ category_clicked[indexSelected].metal }} </li>
+              <li class="TL-unit"><b>Wheight: </b>{{ category_clicked[indexSelected].wheight}} Grams</li>
+              <li class="TL-unit"><b>Chain type: </b>{{ category_clicked[indexSelected].chain }}</li>
+              <li class="TL-unit"><b>Chain Size: </b>{{ category_clicked[indexSelected].size }} cm</li>
+              <li class="TL-unit"><b>Width: </b>{{ category_clicked[indexSelected].width }} cm</li>
+              <li class="TL-unit"><b>Height: </b>{{ category_clicked[indexSelected].height }} cm</li>
             </ul>
           </div>
-          
+
         </div>
           
         <!---------- Modal footer ---------->
@@ -86,10 +114,12 @@ export default {
   },
   data(){
     return{
+      Subcategory_products: 'All Products',
+
       // All Products FILTER
       category_clicked: this.ProductsDB.products,
 
-      indexSelected: 0 //product i selected to open modal 
+      indexSelected: 0, //product i selected to open modal   
     }
   },
 
@@ -100,12 +130,17 @@ export default {
       this.indexSelected = 0
 
       // do the [filter]---
-      if(id == -1) this.category_clicked = this.ProductsDB.products 
-      else{
+      // if Click all products
+      if(id == -1){
+        this.category_clicked = this.ProductsDB.products 
+        this.Subcategory_products = 'All Products'                                                         //Change name
+      //if click other categories
+      } else{
         this.category_clicked = []
         this.ProductsDB.products.forEach(element => {
           if(element.category_id == id) this.category_clicked.push(element) 
         });
+        this.Subcategory_products = this.ProductsDB.categories[this.category_clicked[0].category_id -1].name  //Change name
       }
     },
 
@@ -140,6 +175,14 @@ export default {
     margin-bottom: 50px;
   }
   /* ----------- [Category LIST] ---------- */
+  .border-division{
+    border-style: dotted;
+    border-radius: 10px;
+    border-color: lightgray;
+    padding: 13px;
+    margin: 0px 5px;
+  }
+
   .div-photo-subcat{
       position: relative;
   }
@@ -155,30 +198,13 @@ export default {
     transform: scale(1.1, 1.1);
   }
 
-
-  /* transparent, gonna show after hover  */
-  .middle-subcat {
-    transition: .5s ease;
-    opacity: 0;
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  .div-photo-subcat:hover .middle-subcat {
-    opacity: 1;
-  }
-
-  .div-photo-subcat:hover .image-Show {
-    opacity: 0.6;
+  .category-name{
+    margin-top:5px;
   }
 
   /* ----------- [PRODUCT LIST] ---------- */
   .div-photo-carr{
-      margin-bottom: 25px;
+      margin-bottom: 25px;  
   }
 
   /* =========[MODAL]========= */
