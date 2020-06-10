@@ -14,7 +14,8 @@
         </div>
       </div>
       <!-- all categories -->
-      <div class="col-xs-7 border-division">
+      <div class="col-md-7 col-xs-9 border-division">
+        <p><b>Filter by Category</b></p>
         <div v-for="category in ProductsDB.categories" v-bind:key="category.id" @click="Category_Selected(category.id)" class="div-photo-subcat col-xs-4">
           <img :src="category.image" :title="category.name" class="img-thumbnail image-Show">
           <div>
@@ -22,13 +23,24 @@
           </div>
         </div>
       </div>
-      <!-- sort -->
-      <div class="col-xs-2 border-division">
-        <p>Sort Products</p>
-        <div v-for="category in ProductsDB.categories" v-bind:key="category.id" @click="Category_Selected(category.id)" class="div-photo-subcat col-xs-4">
-          <img :src="category.image" :title="category.name" class="img-thumbnail image-Show">
+      
+      <div class="col-xs-12 col-md-2 extra-filter">
+        <div class="col-xs-2"></div>
+      <!-- filter by preferences and religious -->
+        <div class="col-xs-4 col-md-12 border-division">
+          <p><b>Preferenced filters</b></p>
           <div>
-              <div class="category-name">{{ category.name }}</div>
+            <p class="filter-sort"><i class="fa fa-heart"></i> Popularity</p>
+            <p class="filter-sort">Regilious</p>
+          </div>
+
+        </div>
+        <!-- sort wheight and size-->
+        <div class="col-xs-4 col-md-12 border-division">
+          <p><b>Sort Products</b></p>
+          <div>
+            <p><span class="filter-sort">Heavier</span>/ <span class="filter-sort">Lighter</span></p>
+            <p><span class="filter-sort">Bigger</span>/ <span class="filter-sort">Smaller</span></p>
           </div>
         </div>
       </div>
@@ -182,6 +194,10 @@ export default {
     padding: 13px;
     margin: 0px 5px;
   }
+  .border-division:hover{
+    transition:all 0.5s ease;
+    border-color: red;
+  }
 
   .div-photo-subcat{
       position: relative;
@@ -200,8 +216,32 @@ export default {
 
   .category-name{
     margin-top:5px;
+    font-family: "Santral";
   }
 
+  /* -----filter and sort----- */
+  .extra-filter{
+    
+  }
+  @media only screen and (max-width: 993px) {
+    .extra-filter{
+      margin-top: 10px;
+    }
+  }
+
+  .filter-sort{
+    transition:all 0.3s ease;
+    cursor: pointer;
+  }
+  .filter-sort:hover {
+    color:red;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+
+ 
   /* ----------- [PRODUCT LIST] ---------- */
   .div-photo-carr{
       margin-bottom: 25px;  
