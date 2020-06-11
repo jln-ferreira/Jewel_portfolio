@@ -392,19 +392,6 @@
             "description": ""
         },
         {   
-            "id":30,
-            "category_id": 1,
-            "name":"Nun",
-            "metal":"Yellow Gold",
-            "chain": "N/A",
-            "wheight": 0.47,
-            "size": "N/A",
-            "width": 1,
-            "height": 1.5,
-            "image": "images/products/nun.jpg",
-            "description": ""
-        },
-        {   
             "id":31,
             "category_id": 1,
             "name":"Cupid",

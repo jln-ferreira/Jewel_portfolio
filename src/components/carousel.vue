@@ -3,7 +3,7 @@
     <h1 class="title-products">Products by Categories</h1>
     <!------------------------- CATEGORY LIST ------------------------------>
     <!----------------------------- FILTER --------------------------------->
-    <div class="row">
+    <div class="row filter-open">
       <!-- all products -->
       <div class="col-xs-2 border-division">
         <div class="div-photo-subcat">
@@ -30,8 +30,8 @@
         <div class="col-xs-4 col-md-12 border-division">
           <p><b>Preferenced filters</b></p>
           <div>
-            <p class="filter-sort"><i class="fa fa-heart"></i> Popularity</p>
-            <p class="filter-sort">Regilious</p>
+            <p class="filter-sort" @click="Prefered_Selected()"><i class="fa fa-heart"></i> Popularity</p>
+            <p class="filter-sort" @click="Religious_Selected()">Regilious</p>
           </div>
 
         </div>
@@ -39,8 +39,8 @@
         <div class="col-xs-4 col-md-12 border-division">
           <p><b>Sort Products</b></p>
           <div>
-            <p><span class="filter-sort">Heavier</span>/ <span class="filter-sort">Lighter</span></p>
-            <p><span class="filter-sort">Bigger</span>/ <span class="filter-sort">Smaller</span></p>
+            <p><span class="filter-sort" @click="sort_Weight('Heavier')">Heavier</span>/ <span class="filter-sort"  @click="sort_Weight('Lighter')">Lighter</span></p>
+            <p><span class="filter-sort" @click="sort_Size('Bigger')">Bigger</span>/ <span class="filter-sort" @click="sort_Size('Smaller')">Smaller</span></p>
           </div>
         </div>
       </div>
@@ -130,19 +130,25 @@ export default {
 
       // All Products FILTER
       category_clicked: this.ProductsDB.products,
+      //All Products.id PREFERED
+      prefered_arr: [1,2,3,4],
+      //All Products.id PREFERED
+      Religious_arr: [1,2,3,4],
 
-      indexSelected: 0, //product i selected to open modal   
+      // -----[modal]-----
+      //product i selected to open modal
+      indexSelected: 0,    
     }
   },
 
   methods:{
+    //------------------[FILTER]------------------
     // CLIKED SUBCATEGORY TO INSERT ALL OBJ IN A ARRAY ----PRODUCTS----
     Category_Selected(id){
       // reset select of products
       this.indexSelected = 0
 
       // do the [filter]---
-      // if Click all products
       if(id == -1){
         this.category_clicked = this.ProductsDB.products 
         this.Subcategory_products = 'All Products'                                                         //Change name
@@ -155,8 +161,63 @@ export default {
         this.Subcategory_products = this.ProductsDB.categories[this.category_clicked[0].category_id -1].name  //Change name
       }
     },
+    // CLICKED MY PREFERED FILTER                      ----PRODUCTS----
+    Prefered_Selected(){
+       // reset select of products
+      this.indexSelected = 0
+      this.category_clicked = []
+      this.Subcategory_products = 'Popularity'
+      var prefered_count = 0
 
-    // ----[MODAL]----
+      // do the [filter]---
+      this.ProductsDB.products.forEach(element => {
+          if(element.id == this.prefered_arr[prefered_count]) {
+            this.category_clicked.push(element)
+            prefered_count += 1
+          }
+        });
+    },
+    // CLICKED MY RELIGIOUS FILTER                      ----PRODUCTS----
+    Religious_Selected(){
+       // reset select of products
+      this.indexSelected = 0
+      this.category_clicked = []
+      this.Subcategory_products = 'Religious'
+      var religious_count = 0
+
+      // do the [filter]---
+      this.ProductsDB.products.forEach(element => {
+          if(element.id == this.Religious_arr[religious_count]) {
+            this.category_clicked.push(element)
+            religious_count += 1
+          }
+        }); 
+    },
+      //------------------[SORT]------------------
+      // CLIKED TO SORT PRODUCTS  WEIGHTS AND SIZE ----PRODUCTS----
+      sort_Weight(weight){
+        if(weight == 'Heavier'){
+          this.category_clicked.sort((a,b) => {
+            return (a.wheight < b.wheight) ? 1 : -1
+          })
+        }else{
+          this.category_clicked.sort((a,b) => {
+            return (a.wheight > b.wheight) ? 1 : -1
+          })
+        }
+      },
+      sort_Size(size){
+        if(size == 'Bigger'){
+          this.category_clicked.sort((a,b) => {
+            return ((a.width * a.height) < (b.width * b.height)) ? 1 : -1
+          })
+        }else{
+          this.category_clicked.sort((a,b) => {
+            return (a.width * a.height) > (b.width * b.height) ? 1 : -1
+          })
+        }
+      },
+    //------------------[MODAL]------------------
     IndexSelected(index){ //product i selected to open modal 
       return this.indexSelected = index
     },
@@ -172,6 +233,7 @@ export default {
 </script>
 
 <style>
+  @import url('https://fonts.googleapis.com/css?family=Fjalla+One'); 
   /* [Bring fonts] */
   @font-face {
     font-family: Santral;
@@ -239,8 +301,6 @@ export default {
     font-weight: bold;
     font-size: 15px;
   }
-
-
  
   /* ----------- [PRODUCT LIST] ---------- */
   .div-photo-carr{
@@ -286,5 +346,6 @@ export default {
     text-justify: inter-word;
   }
   /* =========[END MODAL]========= */
+
 
 </style>
