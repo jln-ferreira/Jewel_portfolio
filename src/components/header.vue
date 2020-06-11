@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="header-site">
+
+  </div>
 </template>
 
 <script>
@@ -16,5 +18,7 @@ export default {
 </script>
 
 <style>
-
+.header-site{
+  height: 100px;
+}
 </style>
