@@ -468,6 +468,71 @@
             "height": 2.4,
             "image": "images/products/open-heart.jpg",
             "description": ""
+        },
+        {   
+            "id":37,
+            "category_id": 1,
+            "name":"Ankh",
+            "metal":"Yellow Gold",
+            "chain": "N/A",
+            "wheight": 0.33,
+            "size": "N/A",
+            "width": 1,
+            "height": 2.2,
+            "image": "images/products/ankh.jpg",
+            "description": ""
+        },
+        {   
+            "id":38,
+            "category_id": 1,
+            "name":"Agnus Dei",
+            "metal":"Yellow Gold",
+            "chain": "N/A",
+            "wheight": 0.68,
+            "size": "N/A",
+            "width": 1,
+            "height": 1,
+            "image": "images/products/agnus-dei.jpg",
+            "description": ""
+        },
+        {   
+            "id":39,
+            "category_id": 1,
+            "name":"Scapular Medal",
+            "metal":"Yellow Gold",
+            "chain": "N/A",
+            "wheight": 0.4,
+            "size": "N/A",
+            "width": 1.1,
+            "height": 0.6,
+            "image": "images/products/scapular-medal.jpg",
+            "description": ""
+        },
+        {   
+            "id":40,
+            "category_id": 1,
+            "name":"Camafeo",
+            "metal":"Yellow Gold",
+            "chain": "N/A",
+            "wheight": 0.95,
+            "size": "N/A",
+            "width": 1.5,
+            "height": 2.5,
+            "image": "images/products/camafeo.jpg",
+            "description": ""
+        },
+        {   
+            "id":41,
+            "category_id": 1,
+            "name":"Crocodile",
+            "metal":"Yellow Gold",
+            "chain": "N/A",
+            "wheight": 0.25,
+            "size": "N/A",
+            "width": 0.5,
+            "height": 1.5,
+            "image": "images/products/crocodile.jpg",
+            "description": ""
         }
     ],
     "categories":[
